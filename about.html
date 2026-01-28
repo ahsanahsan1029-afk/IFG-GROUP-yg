@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>about</title>
+        <style>
+                h1 {
+                        text-align: center;
+                }
+                h4 {
+                        text-align: center;
+                }
+#navbar{  
+ background: transparent;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  border-radius: 8px;  
+
+}
+
+.logo {
+height: 150px;
+border-radius: 20px;
+margin-top: 10px;
+margin-left: 10px;
+}
+#btn1 {
+color: white;
+background: #3C72CC;
+position: fixed;
+top: 3%;
+left: 86%;
+font-size: 30px;
+border-radius: 10px;
+border: blue; 
+}
+#d2 {
+  background: #085CC9;
+  height: 160px;
+  width: 90px;
+  position: fixed;
+  top: 10%;
+  right: 0%;
+  display: none;
+  border-radius: 10px;
+  
+  
+}
+#btn3{
+  color: white;
+  background: transparent;
+  border-color: white;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+}
+
+#btn4 {
+    color: white;
+background: transparent;
+border-color: white;
+border-radius: 8px;
+display: block;
+margin: 20px auto;
+}
+#btn5 {
+     color: white;
+background: transparent;
+border-color: white;
+border-radius: 8px;
+display: block;
+margin: 20px auto;
+}
+        </style>
+</head>
+
+<body>
+<div id="navbar">
+        <img class="logo" src="logo.png">
+        <button onclick="showwindow()" id="btn1">☰</button>
+        <div id="d2">
+                <button onclick="home()" id="btn3">Home</button>
+                
+                <button onclick="contact()" id="btn4">Contact</button>
+                
+                <button onclick="about()" id="btn5">About</button>
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+        <div id="d1">
+                <h1 id="h1">About</h1>
+                <h4 id="h2">This website Is Not For Learning Hacking Cheating</h4>
+                <br>
+                <br>
+                <br>
+                <h4 id="h3">This is For Educational Purposes Only</h4>
+                <br>
+                <br>
+                <br>
+                <h4 id="h4">But For Our Audience Provided For Free</h4>
+                
+        </div>
+        <script>
+function showwindow() {
+   let box =
+   document.getElementById("d2").style.display = "block"
+ }
+// screen par kahin bhi tap → d2 hide
+document.addEventListener("click", function() {
+  document.getElementById("d2").style.display = "none";
+});
+
+// d2 ke andar click ho to hide na ho
+document.getElementById("d2").addEventListener("click", function(e) {
+  e.stopPropagation();
+});
+
+// ☰ button par click ho to hide trigger na ho
+document.getElementById("btn1").addEventListener("click", function(e) {
+  e.stopPropagation();
+});
+   function home() {
+     window.location.href = "ifg group.html";
+   }
+   function contact() {
+     window.location.href = "contact.html";
+   }
+   function about() {
+     window.location.href = "about.html"
+   }
+        </script>
+</body>
+
+</html>

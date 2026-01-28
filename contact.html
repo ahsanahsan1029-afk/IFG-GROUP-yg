@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>contact</title>
+        <style>
+body {
+        background: linear-gradient(to right, #42445A, #4D528D, #555FC6, #7580FF);
+}
+#form {
+background: white;
+ font-size: 70px;
+ 
+ 
+}
+#email {
+        background: #E3E4F1;
+        color: gray;
+        font-size: 20px;
+        margin-left: 25px;
+        border: transparent;
+        padding: 24px;
+}
+#pass {
+       background: #E3E4F1;
+color: gray;
+font-size: 20px;
+margin-left: 25px;
+border: transparent;
+padding: 24px;
+}
+#msg2{
+       background: #E3E4F1;
+color: #767676;
+font-size: 20px;
+margin-left: 25px;
+border: transparent;
+padding: 24px;
+padding-bottom: 200px;
+}
+#btn1 {
+        color: white;
+        background: #3C72CC;
+        position: fixed;
+        top: 3%;
+        left: 86%;
+        font-size: 30px;
+        border-radius: 10px;
+        border: blue;
+}
+#btn2 {
+        font-size: 20px;
+        padding: 15px;
+        margin-left: 50px;
+        margin-bottom: 20px;
+        padding-left: 110px;
+        padding-right: 110px;
+        color: white;
+        background: limegreen;
+        border-radius: 15px;
+        border: transparent;
+}
+#msg1 {
+        font-size: 20px;
+        text-align: center;
+}
+#h21 {
+        font-size: 30px;
+        text-align: center;
+        color: gray;
+}
+#navbar {
+        background: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 8px;
+        
+}
+
+.logo {
+        height: 150px;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-left: 10px;
+}
+#d2 {
+  background: #085CC9;
+  height: 160px;
+  width: 90px;
+  position: fixed;
+  top: 10%;
+  right: 0%;
+  display: none;
+  border-radius: 10px;
+  
+  
+}
+#btn3{
+  color: white;
+  background: transparent;
+  border-color: white;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+}
+
+#btn4 {
+    color: white;
+background: transparent;
+border-color: white;
+border-radius: 8px;
+display: block;
+margin: 20px auto;
+}
+#btn5 {
+     color: white;
+background: transparent;
+border-color: white;
+border-radius: 8px;
+display: block;
+margin: 20px auto;
+}
+        </style>
+</head>
+
+<body>
+<div id="navbar">
+        <img class="logo" src="logo.png">
+        <button onclick="showwindow()" id="btn1">☰</button>
+        <div id="d2">
+                <button onclick="home()" id="btn3">Home</button>
+                
+                <button onclick="contact()" id="btn4">Contact</button>
+                
+                <button onclick="about()" id="btn5">About</button>
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+        <div id="form">
+                <h2 id="h21">IFG GROUP</h2>
+        <input type="text" id="email" placeholder="Enter email">
+       <input type="password" id="pass" placeholder="Enter password">
+        <input type="text" id="msg2" placeholder="Your massage">
+        
+        <b><p id="msg1"></p></b>
+        <button id="btn2">Submit</button>
+        </div>
+<script>
+function showwindow() {
+        let box =
+                document.getElementById("d2").style.display = "block"
+}
+// screen par kahin bhi tap → d2 hide
+document.addEventListener("click", function() {
+        document.getElementById("d2").style.display = "none";
+});
+
+// d2 ke andar click ho to hide na ho
+document.getElementById("d2").addEventListener("click", function(e) {
+        e.stopPropagation();
+});
+
+// ☰ button par click ho to hide trigger na ho
+document.getElementById("btn1").addEventListener("click", function(e) {
+        e.stopPropagation();
+});
+function home() {
+     window.location.href = "ifg group.html";
+   }
+   function contact() {
+     window.location.href = "contact.html";
+   }
+   function about() {
+     window.location.href = "about.html"
+   }
+
+
+let btn1 =
+document.getElementById("btn2");
+let msg1 =
+document.getElementById("msg1");
+
+btn1.addEventListener("click", function(){
+        btn1.disabled = true
+        btn1.innerHTML = "Wait..."
+        btn1.style.backgroundColor = "skyblue"
+    let e = 
+    document.getElementById("email").value;
+    let p =
+    document.getElementById("pass").value;
+    let m = 
+    document.getElementById("msg2").value;
+    
+    setTimeout(function () {
+    if (e == "" || p == "" || m == "") {
+           msg1.innerHTML = "PLEASE FILL"
+           msg1.style.color = "red"
+    } else if (!e.includes("@")) {
+           msg1.innerHTML = "WRONG EMAIL"
+           msg1.style.color = "red"
+    }else if (p.length < 6) {
+            msg1.innerHTML = "WRONG PASSWORD UPTO 6 CHARACTER"
+            msg1.style.color = "red"
+    } else {
+            msg1.innerHTML = "FORM SUBMITTED SUCCESSFUL"
+            msg1.style.color = "green"
+           document.getElementById("email").value = "";
+document.getElementById("pass").value = "";
+document.getElementById("msg2").value = "";
+            
+           setTimeout(function() {
+        msg1.innerHTML = "";
+}, 750);
+       
+    }
+    btn1.disabled = false
+    btn1.innerHTML = "Submit"
+    btn1.style.backgroundColor = "limegreen"
+    }, 1500); 
+    
+});
+
+</script>
+        
+</body>
+
+</html>
